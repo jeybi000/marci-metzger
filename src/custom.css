@@ -1,25 +1,43 @@
 :root {
   color-scheme: light;
-  --ink: #172a35;
-  --ink-soft: #324c59;
-  --paper: #f4f7f7;
-  --surface: #e7eff1;
+  --ink: #162b37;
+  --ink-soft: #44535a;
+  --paper: #f7f5f1;
+  --surface: #eeebe5;
   --blue-pale: #d3e2e7;
   --blue-mid: #527b8c;
-  --blue-deep: #264c5d;
-  --navy: #183541;
-  --accent: #17668a;
-  --accent-strong: #0c506f;
+  --blue-deep: #173847;
+  --navy: #0c2633;
+  --accent: #76552e;
+  --accent-dark: #5f4223;
+  --accent-strong: #5f4223;
   --white: #ffffff;
-  --page-gutter: clamp(1.75rem, 5vw, 5rem);
-  --section-space: clamp(5rem, 10vw, 9.5rem);
-  --font-display: "Cormorant Garamond", Georgia, serif;
-  --font-body: "DM Sans", Arial, sans-serif;
-  --type-small: 16px;
-  --type-body: 18px;
-  --type-subhead: 24px;
-  --type-heading: 40px;
-  --type-display: 64px;
+  --page-gutter: clamp(1.25rem, 4vw, 4rem);
+  --section-space: clamp(4rem, 8vw, 7.5rem);
+
+  /* Typography System */
+  --font-heading: "Cormorant Garamond", Georgia, serif;
+  --font-body: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-display: var(--font-heading);
+
+  /* Fluid Typography Scale */
+  --type-hero: clamp(2.75rem, 2.25rem + 3.2vw, 5rem);
+  --type-h2: clamp(2.25rem, 1.85rem + 1.8vw, 3.5rem);
+  --type-h3: clamp(1.625rem, 1.45rem + 0.8vw, 2rem);
+  --type-card-h: clamp(1.5rem, 1.35rem + 0.6vw, 1.75rem);
+  --type-body-lg: clamp(1rem, 0.94rem + 0.28vw, 1.125rem);
+  --type-body: 1rem;
+  --type-body-sm: 0.875rem;
+  --type-nav: 0.9375rem;
+  --type-btn: clamp(0.9375rem, 0.9rem + 0.16vw, 1rem);
+  --type-label: 0.875rem;
+  --type-eyebrow: clamp(0.75rem, 0.72rem + 0.14vw, 0.8125rem);
+
+  /* Legacy variable bridges */
+  --type-small: var(--type-body-sm);
+  --type-subhead: var(--type-card-h);
+  --type-heading: var(--type-h2);
+  --type-display: var(--type-hero);
 }
 
 * {

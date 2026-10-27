@@ -5,16 +5,33 @@
   --ink-soft: #44535a;
   --navy: #0c2633;
   --blue-deep: #173847;
-  --accent: #a47d45;
-  --accent-dark: #866233;
+  --accent: #76552e;
+  --accent-dark: #5f4223;
   --white: #ffffff;
-  --font-display: "Cormorant Garamond", Georgia, serif;
-  --font-body: "DM Sans", Arial, sans-serif;
-  --type-small: 14px;
-  --type-body: 16px;
-  --type-subhead: 21px;
-  --type-heading: clamp(36px, 4vw, 52px);
-  --type-display: clamp(58px, 7vw, 96px);
+
+  /* Typography System */
+  --font-heading: "Cormorant Garamond", Georgia, serif;
+  --font-body: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-display: var(--font-heading);
+
+  /* Fluid Typography Scale */
+  --type-hero: clamp(2.75rem, 2.25rem + 3.2vw, 5rem);
+  --type-h2: clamp(2.25rem, 1.85rem + 1.8vw, 3.5rem);
+  --type-h3: clamp(1.625rem, 1.45rem + 0.8vw, 2rem);
+  --type-card-h: clamp(1.5rem, 1.35rem + 0.6vw, 1.75rem);
+  --type-body-lg: clamp(1rem, 0.94rem + 0.28vw, 1.125rem);
+  --type-body: 1rem;
+  --type-body-sm: 0.875rem;
+  --type-nav: 0.9375rem;
+  --type-btn: clamp(0.9375rem, 0.9rem + 0.16vw, 1rem);
+  --type-label: 0.875rem;
+  --type-eyebrow: clamp(0.75rem, 0.72rem + 0.14vw, 0.8125rem);
+
+  /* Legacy variable bridges */
+  --type-small: var(--type-body-sm);
+  --type-subhead: var(--type-card-h);
+  --type-heading: var(--type-h2);
+  --type-display: var(--type-hero);
   --section-space: clamp(64px, 8vw, 112px);
 }
 
@@ -63,16 +80,18 @@ body {
 
 .desktop-nav a,
 .mobile-nav a {
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  font-family: var(--font-body);
+  font-size: var(--type-nav);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  text-transform: none;
 }
 
 .header-phone {
   color: var(--ink);
-  font-size: 13px;
-  font-weight: 600;
+  font-family: var(--font-body);
+  font-size: var(--type-nav);
+  font-weight: 500;
   text-decoration: none;
   white-space: nowrap;
 }
@@ -132,13 +151,14 @@ body {
 .hero-eyebrow {
   display: flex;
   align-items: center;
-  gap: 0.8rem;
+  gap: 0.85rem;
   margin: 0 0 1.1rem;
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 15px;
-  font-weight: 500;
-  letter-spacing: 0.22em;
-  line-height: 1.2;
+  color: rgba(255, 255, 255, 0.95);
+  font-family: var(--font-body);
+  font-size: var(--type-eyebrow);
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  line-height: 1.4;
   text-transform: uppercase;
 }
 
@@ -157,7 +177,7 @@ body {
 }
 
 .hero-eyebrow::before {
-  width: 58px;
+  width: 48px;
   height: 2px;
   background: var(--accent);
   content: "";
@@ -169,8 +189,11 @@ body {
   margin: 0;
   padding: 0;
   background: none;
-  font-size: clamp(68px, 6.2vw, 92px);
-  line-height: 0.88;
+  font-family: var(--font-heading);
+  font-size: var(--type-hero);
+  font-weight: 500;
+  line-height: 0.95;
+  letter-spacing: -0.025em;
   text-align: left;
   white-space: normal;
 }
@@ -181,23 +204,28 @@ body {
 
 .hero-copy .hero-lead {
   position: static;
-  width: min(100%, 480px);
+  width: min(100%, 540px);
+  max-width: 65ch;
   margin: 1rem 0 1.5rem;
   padding: 0;
   transform: none;
   background: none;
   color: var(--white);
-  font-size: clamp(18px, 1.15vw, 20px);
-  line-height: 1.5;
+  font-family: var(--font-body);
+  font-size: var(--type-body-lg);
+  line-height: 1.6;
   text-align: left;
 }
 
 .button {
-  min-height: 46px;
+  min-height: 48px;
   gap: 0.6rem;
-  padding: 0.7rem 1.1rem;
-  font-size: 13px;
+  padding: 0.75rem 1.35rem;
+  font-family: var(--font-body);
+  font-size: var(--type-btn);
   font-weight: 600;
+  letter-spacing: 0.01em;
+  text-transform: none;
 }
 
 .hero-actions {
@@ -213,7 +241,9 @@ body {
   justify-content: space-between;
   padding-inline: 1.5rem;
   transform: none;
-  font-size: 15px;
+  font-family: var(--font-body);
+  font-size: var(--type-btn);
+  font-weight: 600;
 }
 
 .hero-actions .button {
@@ -338,10 +368,11 @@ body {
   align-items: center;
   gap: 0.8rem;
   margin: 0 0 1.2rem;
-  color: #806349;
-  font-size: 13px;
+  color: #6f4f2c;
+  font-family: var(--font-body);
+  font-size: var(--type-eyebrow);
   font-weight: 600;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
 }
 
@@ -360,26 +391,30 @@ body {
   max-width: 17ch;
   margin: 0;
   color: var(--ink);
-  font-family: var(--font-display);
-  font-size: var(--type-heading);
+  font-family: var(--font-heading);
+  font-size: var(--type-h2);
   font-weight: 500;
-  letter-spacing: -0.035em;
-  line-height: 0.95;
+  letter-spacing: -0.02em;
+  line-height: 1.08;
 }
 
 .about-copy h2 {
   max-width: none;
   margin-bottom: 1rem;
-  font-size: clamp(44px, 4.4vw, 64px);
-  line-height: 0.98;
+  font-family: var(--font-heading);
+  font-size: var(--type-h2);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.08;
 }
 
 .section-lead,
 .about-copy > p:not(.section-lead) {
-  max-width: 58ch;
+  max-width: 65ch;
   color: var(--ink-soft);
-  font-size: 17px;
-  line-height: 1.55;
+  font-family: var(--font-body);
+  font-size: var(--type-body-lg);
+  line-height: 1.6;
 }
 
 .section-lead {
@@ -431,15 +466,16 @@ body {
 
 .about-benefit-copy strong {
   color: var(--ink);
-  font-family: var(--font-display);
-  font-size: 18px;
+  font-family: var(--font-heading);
+  font-size: 1.1875rem;
   font-weight: 600;
-  line-height: 1.2;
+  line-height: 1.25;
 }
 
 .about-benefit-copy > span {
   color: var(--ink-soft);
-  font-size: 14px;
+  font-family: var(--font-body);
+  font-size: var(--type-label);
   line-height: 1.5;
 }
 
@@ -450,6 +486,9 @@ body {
   margin-top: 0.15rem;
   background: #a8784f;
   color: var(--white);
+  font-family: var(--font-body);
+  font-size: var(--type-btn);
+  font-weight: 600;
 }
 
 .about-copy .button:hover {
@@ -501,17 +540,18 @@ body {
 
 .about-experience-badge span {
   color: var(--ink-soft);
-  font-size: 12px;
-  font-weight: 500;
+  font-family: var(--font-body);
+  font-size: var(--type-eyebrow);
+  font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
 }
 
 .about-experience-badge strong {
-  font-family: var(--font-display);
-  font-size: 28px;
+  font-family: var(--font-heading);
+  font-size: clamp(1.625rem, 2vw, 2rem);
   font-weight: 500;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.02em;
   line-height: 1;
   text-transform: uppercase;
 }
@@ -533,18 +573,22 @@ body {
   gap: clamp(2rem, 4vw, 4.5rem);
 }
 
-.sell-section h2,
-.contact-story h2 {
+.sell-section h2 {
   color: var(--white);
-  font-size: clamp(42px, 5vw, 64px);
+  font-family: var(--font-heading);
+  font-size: var(--type-h2);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.08;
 }
 
 .sell-copy > p {
-  max-width: 42ch;
+  max-width: 65ch;
   margin: 1rem 0 1.35rem;
   color: #f0f3f4;
-  font-size: 16px;
-  line-height: 1.55;
+  font-family: var(--font-body);
+  font-size: var(--type-body-lg);
+  line-height: 1.6;
 }
 
 .sell-image {
@@ -568,8 +612,8 @@ body {
 
 .sell-proof strong {
   color: var(--white);
-  font-family: var(--font-display);
-  font-size: 35px;
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 3.2vw + 1rem, 2.75rem);
   font-weight: 500;
   line-height: 1;
 }
@@ -577,12 +621,13 @@ body {
 .sell-proof span,
 .proof-caveat {
   color: #d9e1e4;
-  font-size: 13px;
+  font-family: var(--font-body);
+  font-size: var(--type-label);
 }
 
 .proof-caveat {
   margin: 0;
-  line-height: 1.45;
+  line-height: 1.5;
 }
 
 .search-section {
@@ -596,11 +641,17 @@ body {
 
 .section-heading h2 {
   max-width: 15ch;
+  font-family: var(--font-heading);
+  font-size: var(--type-h2);
+  font-weight: 500;
+  line-height: 1.08;
 }
 
 .section-heading .section-lead {
   margin: 0;
-  font-size: 16px;
+  font-family: var(--font-body);
+  font-size: var(--type-body-lg);
+  line-height: 1.6;
 }
 
 .demo-notice {
@@ -608,7 +659,8 @@ body {
   padding: 0;
   background: transparent;
   color: var(--ink-soft);
-  font-size: 13px;
+  font-family: var(--font-body);
+  font-size: var(--type-label);
 }
 
 .search-form {
@@ -625,16 +677,19 @@ body {
 
 .field label {
   color: var(--ink-soft);
-  font-size: 13px;
+  font-family: var(--font-body);
+  font-size: var(--type-label);
+  font-weight: 500;
 }
 
 .field input,
 .field select,
 .field textarea {
-  min-height: 40px;
+  min-height: 42px;
   padding: 0.45rem 0.55rem;
   border-color: #d7d2ca;
-  font-size: 14px;
+  font-family: var(--font-body);
+  font-size: var(--type-label);
 }
 
 .field .price-input input {
@@ -647,8 +702,11 @@ body {
 }
 
 .search-actions .button {
-  min-height: 40px;
+  min-height: 42px;
   padding-inline: 1rem;
+  font-family: var(--font-body);
+  font-size: var(--type-btn);
+  font-weight: 600;
   white-space: nowrap;
 }
 
@@ -659,7 +717,8 @@ body {
 .form-message {
   margin: 0.8rem 0;
   color: var(--ink-soft);
-  font-size: 13px;
+  font-family: var(--font-body);
+  font-size: var(--type-label);
   font-weight: 500;
 }
 
@@ -680,14 +739,18 @@ body {
 }
 
 .listing-copy h3 {
-  font-size: 18px;
+  font-family: var(--font-heading);
+  font-size: var(--type-card-h);
+  font-weight: 500;
+  line-height: 1.25;
 }
 
 .listing-copy > p:last-child {
-  max-width: 40ch;
+  max-width: 65ch;
   margin-top: 0.25rem;
-  font-size: 15px;
-  line-height: 1.45;
+  font-family: var(--font-body);
+  font-size: var(--type-body);
+  line-height: 1.5;
 }
 
 .affiliations-section {
@@ -705,15 +768,18 @@ body {
 .affiliations-heading h2 {
   max-width: none;
   margin: 0 0 1rem;
-  font-size: clamp(32px, 3.7vw, 48px);
+  font-family: var(--font-heading);
+  font-size: var(--type-h2);
+  font-weight: 500;
   line-height: 1.08;
 }
 
 .affiliations-heading > p {
-  max-width: 60ch;
+  max-width: 65ch;
   margin: 0 auto;
   color: var(--ink-soft);
-  font-size: clamp(15px, 1.3vw, 18px);
+  font-family: var(--font-body);
+  font-size: var(--type-body-lg);
   line-height: 1.6;
 }
 
@@ -816,7 +882,8 @@ body {
   max-width: 28ch;
   margin: 0;
   color: #4a4b50;
-  font-size: 13px;
+  font-family: var(--font-body);
+  font-size: var(--type-label);
   font-weight: 600;
   line-height: 1.45;
 }
@@ -847,24 +914,30 @@ body {
 }
 
 .gallery-section .gallery-heading h2 {
-  max-width: 12ch;
+  max-width: 14ch;
   margin-bottom: 1.25rem;
-  font-size: clamp(44px, 4.6vw, 68px);
-  line-height: 1;
+  font-family: var(--font-heading);
+  font-size: var(--type-h2);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.08;
 }
 
 .gallery-heading > p {
-  max-width: 34ch;
+  max-width: 65ch;
   margin: 0 0 1.75rem;
   color: var(--ink-soft);
-  font-size: clamp(17px, 1.35vw, 20px);
+  font-family: var(--font-body);
+  font-size: var(--type-body-lg);
   line-height: 1.6;
 }
 
 .gallery-heading .button {
   min-height: 52px;
   padding-inline: 1.5rem;
-  font-size: 15px;
+  font-family: var(--font-body);
+  font-size: var(--type-btn);
+  font-weight: 600;
 }
 
 .visually-hidden {
@@ -881,8 +954,9 @@ body {
   align-items: center;
   gap: 0.85rem;
   margin: 0 0 1.25rem;
-  color: var(--ink-soft);
-  font-size: 13px;
+  color: #6f4f2c;
+  font-family: var(--font-body);
+  font-size: var(--type-eyebrow);
   font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -1197,11 +1271,17 @@ body {
 
 .services-heading h2 {
   max-width: 20ch;
+  font-family: var(--font-heading);
+  font-size: var(--type-h2);
+  font-weight: 500;
+  line-height: 1.08;
 }
 
 .services-heading .section-lead {
   margin: 0 0 0.3rem;
-  font-size: 16px;
+  font-family: var(--font-body);
+  font-size: var(--type-body-lg);
+  line-height: 1.6;
 }
 
 .service-list {
@@ -1216,8 +1296,9 @@ body {
   align-items: center;
   gap: 0.85rem;
   margin: 0 0 0.75rem;
-  color: #806349;
-  font-size: 13px;
+  color: #6f4f2c;
+  font-family: var(--font-body);
+  font-size: var(--type-eyebrow);
   font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -1258,10 +1339,11 @@ body {
 
 .service-item h3 {
   margin: 0 0 0.5rem;
-  font-family: var(--font-body);
-  font-size: 17px;
-  font-weight: 700;
-  line-height: 1.3;
+  color: var(--ink);
+  font-family: var(--font-heading);
+  font-size: var(--type-card-h);
+  font-weight: 500;
+  line-height: 1.25;
 }
 
 .service-item p {
@@ -1269,8 +1351,9 @@ body {
   min-height: 0;
   margin: 0 0 1rem;
   color: var(--ink-soft);
-  font-size: 14px;
-  line-height: 1.55;
+  font-family: var(--font-body);
+  font-size: var(--type-body);
+  line-height: 1.6;
 }
 
 .service-item .text-link {
@@ -1278,7 +1361,9 @@ body {
   margin-top: auto;
   min-height: 34px;
   color: var(--ink);
-  font-size: 13px;
+  font-family: var(--font-body);
+  font-size: var(--type-nav);
+  font-weight: 600;
   text-decoration: none;
 }
 
@@ -1321,16 +1406,20 @@ body {
 .contact-story h2 {
   max-width: 16ch;
   color: var(--white);
-  font-size: clamp(58px, 6vw, 76px);
-  line-height: 1;
+  font-family: var(--font-heading);
+  font-size: var(--type-h2);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.08;
 }
 
 .contact-story > p {
-  max-width: 43ch;
+  max-width: 65ch;
   margin: 1rem 0 1.5rem;
   color: #f0f3f4;
-  font-size: clamp(17px, 1.25vw, 21px);
-  line-height: 1.55;
+  font-family: var(--font-body);
+  font-size: var(--type-body-lg);
+  line-height: 1.6;
 }
 
 .contact-rule {
@@ -1343,8 +1432,9 @@ body {
   align-items: center;
   gap: 1rem;
   color: var(--white);
-  font-size: clamp(20px, 1.6vw, 27px);
-  font-weight: 600;
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 1.8vw + 0.8rem, 2rem);
+  font-weight: 500;
   text-decoration: none;
 }
 
@@ -1375,21 +1465,20 @@ body {
 }
 
 .contact-form h3 {
-  margin: 0;
+  margin: 0 0 0.25rem;
   color: var(--ink);
-  font-family: var(--font-display);
-  font-size: clamp(30px, 3vw, 38px);
-  font-weight: 600;
-}
-
-.contact-form h3 {
-  margin-bottom: -0.45rem;
+  font-family: var(--font-heading);
+  font-size: var(--type-h3);
+  font-weight: 500;
+  line-height: 1.2;
 }
 
 .form-note {
   margin: 0;
   color: var(--ink-soft);
-  font-size: 15px;
+  font-family: var(--font-body);
+  font-size: var(--type-body-sm);
+  line-height: 1.5;
 }
 
 .contact-form .field {
@@ -1398,8 +1487,9 @@ body {
 
 .contact-form .field label {
   color: var(--ink);
-  font-size: 15px;
-  font-weight: 600;
+  font-family: var(--font-body);
+  font-size: var(--type-label);
+  font-weight: 500;
 }
 
 .contact-form .field input,
@@ -1408,7 +1498,8 @@ body {
   padding: 0.7rem 0.8rem;
   border-color: #d7d2ca;
   background: #fff;
-  font-size: 15px;
+  font-family: var(--font-body);
+  font-size: var(--type-label);
 }
 
 .contact-form .field textarea {
@@ -1418,13 +1509,17 @@ body {
 .contact-form .button {
   justify-self: start;
   min-height: 48px;
-  padding-inline: 1.25rem;
-  font-size: 14px;
+  padding-inline: 1.5rem;
+  font-family: var(--font-body);
+  font-size: var(--type-btn);
+  font-weight: 600;
 }
 
 .contact-form .form-message {
   margin: 0;
-  font-size: 14px;
+  font-family: var(--font-body);
+  font-size: var(--type-label);
+  font-weight: 500;
 }
 
 .office-section {
@@ -1462,13 +1557,18 @@ body {
   max-width: none;
   margin: 0 0 0.9rem;
   color: var(--ink);
-  font-size: clamp(38px, 4vw, 52px);
+  font-family: var(--font-heading);
+  font-size: var(--type-h2);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.08;
 }
 
 .office-company {
   margin: 0 0 1.5rem;
   color: var(--ink);
-  font-size: 17px;
+  font-family: var(--font-body);
+  font-size: var(--type-body-lg);
   font-weight: 600;
 }
 
@@ -1481,7 +1581,8 @@ body {
 .office-details .office-detail {
   align-items: center;
   color: var(--ink-soft);
-  font-size: 13px;
+  font-family: var(--font-body);
+  font-size: var(--type-label);
   line-height: 1.5;
 }
 
@@ -1538,16 +1639,19 @@ body {
 .office-detail a {
   display: block;
   color: var(--ink);
+  font-family: var(--font-body);
   font-weight: 600;
   overflow-wrap: anywhere;
   text-decoration: none;
 }
 
 .office-note {
+  max-width: 65ch;
   margin: 1.2rem 0 0;
   color: var(--ink-soft);
-  font-size: 15px;
-  line-height: 1.55;
+  font-family: var(--font-body);
+  font-size: var(--type-body);
+  line-height: 1.6;
 }
 
 .office-directions {
@@ -1558,7 +1662,8 @@ body {
   margin-top: 1rem;
   padding-inline: 1.1rem;
   color: var(--blue);
-  font-size: 14px;
+  font-family: var(--font-body);
+  font-size: var(--type-label);
   font-weight: 600;
   text-decoration: none;
   transition: color 160ms ease, transform 160ms ease;
@@ -1599,12 +1704,13 @@ body {
 .footer-links a,
 .footer-social a {
   color: #e4eaec;
-  font-size: 13px;
-  line-height: 1.55;
+  font-family: var(--font-body);
+  font-size: var(--type-body-sm);
+  line-height: 1.6;
 }
 
 .footer-main p {
-  max-width: 34ch;
+  max-width: 42ch;
 }
 
 .footer-links,
@@ -1620,8 +1726,10 @@ body {
   margin: 0 0 0.4rem;
   color: var(--white);
   font-family: var(--font-body);
-  font-size: 13px;
-  font-weight: 700;
+  font-size: var(--type-label);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .footer-links a,
@@ -1671,7 +1779,9 @@ body {
   margin: 1.5rem 0 0;
   padding-top: 0.9rem;
   color: #d0dadd;
-  font-size: 13px;
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  line-height: 1.5;
 }
 
 .menu-toggle {
@@ -2652,8 +2762,10 @@ body {
 
   .hero-copy .hero-eyebrow {
     margin-bottom: 0.9rem;
-    font-size: 12px;
-    letter-spacing: 0.18em;
+    font-family: var(--font-body);
+    font-size: var(--type-eyebrow);
+    font-weight: 600;
+    letter-spacing: 0.16em;
   }
 
   .hero-eyebrow::before {
@@ -2661,16 +2773,19 @@ body {
   }
 
   .hero-copy h1 {
-    font-size: clamp(46px, 13.5vw, 64px);
-    line-height: 0.92;
+    font-family: var(--font-heading);
+    font-size: var(--type-hero);
+    font-weight: 500;
+    line-height: 1.02;
   }
 
   .hero-copy .hero-lead {
     width: 100%;
-    max-width: 34ch;
+    max-width: 65ch;
     margin-block: 1rem 1.5rem;
-    font-size: 16px;
-    line-height: 1.55;
+    font-family: var(--font-body);
+    font-size: var(--type-body-lg);
+    line-height: 1.6;
   }
 
   .hero-actions {
@@ -2686,7 +2801,9 @@ body {
     min-width: 0;
     min-height: 54px;
     padding-inline: 1.25rem;
-    font-size: 15px;
+    font-family: var(--font-body);
+    font-size: var(--type-btn);
+    font-weight: 600;
   }
 
   .hero-secondary-link {
@@ -2698,10 +2815,10 @@ body {
 
 @media (max-width: 360px) {
   .hero-copy h1 {
-    font-size: 42px;
+    font-size: clamp(38px, 11vw, 44px);
   }
 
   .hero-copy .hero-lead {
-    font-size: 15px;
+    font-size: var(--type-body);
   }
 }
