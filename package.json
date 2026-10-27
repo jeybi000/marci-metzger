@@ -1,0 +1,12 @@
+{
+  "name": "marci-metzger-homepage-prototype",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Responsive Marci Metzger real estate homepage prototype",
+  "scripts": {
+    "build": "tailwindcss -i ./src/input.css -o ./dist/styles.css --minify"
+  },
+  "devDependencies": {
+    "tailwindcss": "3.4.17"
+  }
+}
