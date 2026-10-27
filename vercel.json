@@ -1,0 +1,7 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "tailwindcss -i ./src/input.css -o ./dist/styles.css --minify",
+  "outputDirectory": ".",
+  "cleanUrls": true,
+  "trailingSlash": false
+}
