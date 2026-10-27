@@ -39,6 +39,8 @@ body {
   background: var(--paper);
   color: var(--ink);
   font-size: var(--type-body);
+  font-variant-numeric: lining-nums;
+  font-feature-settings: "lnum" 1;
 }
 
 .container {
@@ -554,6 +556,8 @@ body {
   letter-spacing: -0.02em;
   line-height: 1;
   text-transform: uppercase;
+  font-variant-numeric: lining-nums;
+  font-feature-settings: "lnum" 1;
 }
 
 .about-portrait figcaption {
@@ -615,7 +619,9 @@ body {
   font-family: var(--font-heading);
   font-size: clamp(2rem, 3.2vw + 1rem, 2.75rem);
   font-weight: 500;
-  line-height: 1;
+  line-height: 1.1;
+  font-variant-numeric: lining-nums;
+  font-feature-settings: "lnum" 1;
 }
 
 .sell-proof span,
@@ -1432,10 +1438,13 @@ body {
   align-items: center;
   gap: 1rem;
   color: var(--white);
-  font-family: var(--font-heading);
-  font-size: clamp(1.5rem, 1.8vw + 0.8rem, 2rem);
-  font-weight: 500;
+  font-family: var(--font-body);
+  font-size: clamp(1.35rem, 1.8vw + 0.6rem, 1.75rem);
+  font-weight: 600;
+  letter-spacing: 0.02em;
   text-decoration: none;
+  font-variant-numeric: lining-nums;
+  font-feature-settings: "lnum" 1;
 }
 
 .contact-icon {

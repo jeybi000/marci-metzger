@@ -66,6 +66,8 @@ body {
   font-size: var(--type-body);
   line-height: 1.6;
   text-rendering: optimizeLegibility;
+  font-variant-numeric: lining-nums;
+  font-feature-settings: "lnum" 1;
 }
 
 body,
@@ -523,7 +525,8 @@ button {
   font-size: var(--type-display);
   letter-spacing: -0.035em;
   line-height: 0.95;
-  font-variant-numeric: tabular-nums;
+  font-variant-numeric: lining-nums tabular-nums;
+  font-feature-settings: "lnum" 1, "tnum" 1;
 }
 
 .proof-figure > p:last-child {
